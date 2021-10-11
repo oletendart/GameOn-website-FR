@@ -24,10 +24,9 @@ class Form {
 
         if (this.errors === 0) {
             // cache la modale
-            /*closureModal();
-            document.getElementById("myform").reset();
+            // closureModal();
+            // document.getElementById("reserve").reset();
             // affichage du message d'inscription ok
-            this.registrationMessage = prompt();*/
 
 
         }
@@ -40,9 +39,9 @@ class Form {
         parent.setAttribute('data-error', msg);
     }
 
-    // registerMessage() {
-    //
-    // }
+    registerMessage() {
+
+     }
 
 
     validateFirstname() {
@@ -70,13 +69,13 @@ class Form {
         if (this.lastname.length < 2 || this.lastname.length > 20) {
             this.errors++;
 
-            this.error('last', "Veuillez entrer 2 caractères ou plus.", true);
+            this.error('last', true, "Veuillez entrer 2 caractères ou plus.");
         } else if (!lastnameRegex.test(this.lastname)) {
             this.errors++;
 
-            this.error('last', "Veuillez saisir un nom valide.", true);
+            this.error('last', true, "Veuillez saisir un nom valide.");
         } else {
-            this.error('last', '', false);
+            this.error('last', false);
 
         }
     }
@@ -87,13 +86,13 @@ class Form {
         if (this.email.length < 2 || this.email.length > 20 ) {
             this.errors++;
 
-            this.error('email', "Veuillez remplir le champ.", true);
+            this.error('email', true, "Veuillez remplir le champ.");
         } else if (!this.email.match(/(^[a-z0-9]+[\-\.]*[a-z0-9]+[\@][a-z]+[\-\.]*[a-z0-9]+[\.]{1}[a-z]{2,})$/gm)) {
             this.errors++;
 
-            this.error('email', "Veuillez saisir une adresse mail valide.", true);
+            this.error('email', true, "Veuillez saisir une adresse mail valide.");
         } else {
-            this.error('email', "", false);
+            this.error('email', false);
         }
 
     }
@@ -132,13 +131,13 @@ class Form {
         if (!this.birthdate) {
             this.errors++;
 
-            this.error('birthdate', "Veuillez remplir le champ.", true);
+            this.error('birthdate', true, "Veuillez remplir le champ.");
         } else if (sixteenDate < this.birthdate) {
             this.errors++;
 
-            this.error('birthdate', "Vous devez avoir plus de 16 ans.", true);
+            this.error('birthdate', true, "Vous devez avoir plus de 16 ans.");
         } else {
-            this.error('birthdate', '', false);
+            this.error('birthdate', false);
         }
     }
 
@@ -146,13 +145,13 @@ class Form {
         if (!this.tournament.value) {
             this.errors++;
 
-            this.error('quantity', "Veuillez remplir le champ.", true);
+            this.error('quantity', true, "Veuillez remplir le champ.");
         } else if (isNaN(Number(this.tournament.value))) {
             this.errors++;
 
-            this.error('quantity', "Veuillez saisir un chiffre.", true);
+            this.error('quantity', true, "Veuillez saisir un chiffre.");
         } else {
-            this.error('quantity', "", false);
+            this.error('quantity', false);
         }
     }
 
@@ -163,14 +162,14 @@ class Form {
             if (radios[i].type === 'radio' && radios[i].checked) {
                 this.city = radios[i].value;
 
-                this.error('location1', "", false);
+                this.error('location1', false);
             }
         }
 
         if (!this.city) {
             this.errors++;
 
-            this.error('location1', "Veuillez choisir une ville", true);
+            this.error('location1', true, "Veuillez choisir une ville.");
         }
     }
 
@@ -178,19 +177,11 @@ class Form {
         if (!this.chexboxRequired.checked) {
             this.errors++;
 
-            this.error('checkbox1', "Vous devez vérifier que vous acceptez les termes et conditions.", true);
+            this.error('checkbox1', true, "Vous devez vérifier que vous acceptez les termes et conditions.");
         } else {
-            this.error('checkbox1', "", false);
+            this.error('checkbox1', false);
         }
     }
-
-    /*clearCache() {
-        this.firstname = "";
-        this.lastname = "";
-        this.email = "";
-        this.birthdate.value = "";
-        this.tournament.value = "";
-    }*/
 
 }
 
