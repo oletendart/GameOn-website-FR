@@ -244,6 +244,29 @@ input {
     border: 2px solid #e54858;
 }
 
+.register-message {
+    position: absolute;
+    margin: auto;
+    padding: 2rem;
+    font-size: 2rem;
+    color: white;
+    background-color: grey;
+    border-radius: 2rem;
+    z-index: 999;
+    animation: 3s registerAnimation forwards;
+}
+
+@keyframes registerAnimation{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        display: none;
+        opacity: 0;
+    }
+}
+
+
 /*
 input[data-error]::after {
     background-color: red;

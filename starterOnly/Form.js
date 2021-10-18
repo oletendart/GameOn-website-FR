@@ -11,6 +11,8 @@ class Form {
         this.chexboxRequired = document.getElementById('checkbox1');
         this.city = false;
         this.errors = 0;
+
+        this.form = document.getElementById("reserve");
     }
 
     validate() {
@@ -24,11 +26,10 @@ class Form {
 
         if (this.errors === 0) {
             // cache la modale
-            // closureModal();
-            // document.getElementById("reserve").reset();
+            closureModal();
+            this.form.reset();
             // affichage du message d'inscription ok
-
-
+            this.registerMessage()
         }
 
     }
@@ -40,6 +41,12 @@ class Form {
     }
 
     registerMessage() {
+        let newSpan = document.createElement("span");
+        newSpan.className = "register-message";
+        newSpan.innerText = "Félicitations, vous êtes bien inscrit !";
+        let body = document.getElementsByClassName("hero-section");
+        let element = body[0]
+        element.appendChild(newSpan);
 
      }
 
