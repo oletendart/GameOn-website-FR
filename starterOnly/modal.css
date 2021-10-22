@@ -41,12 +41,13 @@ img {
 
 .main-navbar {
     float: right;
+    color: red;
 }
 
 .topnav a {
     float: left;
     display: block;
-    color: #000000;
+    color: red;
     text-align: center;
     padding: 12px 12px;
     margin: 5px;
@@ -109,7 +110,6 @@ img {
     .topnav a.icon {
         float: right;
         display: block;
-        margin-top: -15px;
     }
 }
 
@@ -184,11 +184,11 @@ main {
 .content {
     margin: 5% auto;
     width: 100%;
-    max-width: 500px;
+    max-width: 536px;
     animation-name: modalopen;
     animation-duration: var(--modal-duration);
     background: #232323;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     position: relative;
     color: #fff;
@@ -198,6 +198,32 @@ main {
 .modal-body {
     padding: 15px 8%;
     margin: 15px auto;
+}
+
+.content.modal-height {
+    height: 850px;
+    padding: 0;
+}
+
+.modal-body.css-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 52px 18px;
+    margin: 0;
+}
+
+.modal-body.css-modal h1 {
+    text-align: center;
+    margin-top: auto;
+    font-size: 36px;
+    line-height: 52px;
+}
+
+.modal-body.css-modal button {
+    margin-top: auto;
 }
 
 label {
@@ -242,28 +268,6 @@ input {
 
 .formData[data-error-visible="true"] .text-control {
     border: 2px solid #e54858;
-}
-
-.register-message {
-    position: absolute;
-    margin: auto;
-    padding: 2rem;
-    font-size: 2rem;
-    color: white;
-    background-color: grey;
-    border-radius: 2rem;
-    z-index: 999;
-    animation: 3s registerAnimation forwards;
-}
-
-@keyframes registerAnimation{
-    0%{
-        opacity: 1;
-    }
-    100%{
-        display: none;
-        opacity: 0;
-    }
 }
 
 
@@ -552,6 +556,12 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
+    #myTopnav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .hero-section {
         display: block;
         box-shadow: unset;
@@ -590,6 +600,10 @@ footer {
         display: block;
         margin: 32px auto 10px;
         padding: 12px 35px;
+    }
+
+    .content.modal-height {
+        height: 750px;
     }
 
     .copyrights {

@@ -29,7 +29,7 @@ class Form {
             closureModal();
             this.form.reset();
             // affichage du message d'inscription ok
-            this.registerMessage()
+            this.registerMessage();
         }
 
     }
@@ -41,12 +41,9 @@ class Form {
     }
 
     registerMessage() {
-        let newSpan = document.createElement("span");
-        newSpan.className = "register-message";
-        newSpan.innerText = "Félicitations, vous êtes bien inscrit !";
-        let body = document.getElementsByClassName("hero-section");
-        let element = body[0]
-        element.appendChild(newSpan);
+        modal.style.display = "block";
+        /*let body = document.getElementsByClassName("hero-section");
+        let element = body[0]*/
 
      }
 
